@@ -78,11 +78,11 @@ export default function BiddingPayment() {
   });
 
   return (
-    <div className="min-h-screen flex justify-center items-center p-6 bg-gradient-to-br from-main-choc to-main-green">
+    <div className="min-h-screen flex justify-center items-center  bg-gradient-to-br from-main-choc to-main-green">
       {dataPayment &&
         dataPayment.map((data) => (
-          <div key={data.id} className="bg-white shadow-lg rounded-lg p-6 flex">
-            <div className="w-1/2 p-4 border-r-4 border-r-main-choc">
+          <div key={data.id} className="  shadow-lg rounded-lg grid grid-cols-2">
+            <div className=" p-4 border-r-4 border-r-main-choc bg-white">
               <h2 className="text-2xl font-inter font-semibold text-main-choc">
                 Detail Pembayaran
               </h2>
@@ -113,7 +113,7 @@ export default function BiddingPayment() {
               )}
 
               {paymentMethod === "cash" && (
-                <div>
+                <div >
                   <h3 className="text-lg font-inter text-main-choc">
                     Bayar dengan{" "}
                     <strong className="text-main-green">Cash</strong>
@@ -133,7 +133,7 @@ export default function BiddingPayment() {
             </div>
 
             {/* Bagian kanan untuk pilihan metode pembayaran */}
-            <div className="w-1/2 p-4 flex flex-col">
+            <div className=" p-4 flex flex-col bg-white">
               <h2 className="text-2xl font-inter font-semibold text-main-choc mb-8">
                 Pilih Metode Pembayaran
               </h2>
@@ -166,10 +166,10 @@ export default function BiddingPayment() {
 
               <Button
                 onPress={onOpen}
-                className="mt-2 mx-auto font-inter font-semibold text-lg bg-main-green text-white"
+                className="btn-bidding mt-2 mx-auto font-inter font-semibold text-lg bg-main-green text-white"
                 auto
               >
-                Konfirmasi Pembayaran
+                <p className="text-sm">Konfirmasi Pembayaran</p>
               </Button>
 
               <Modal isOpen={isOpen} onOpenChange={onOpenChange}>

@@ -35,8 +35,8 @@ function EmployeTransaction() {
   useEffect(() => {});
 
   return (
-    <div className="h-screen flex flex-col pt-10 ">
-      <div className="flex justify-center">
+    <div className="h-screen flex flex-col pt-10  text-center">
+      <div className="transaction  flex justify-center  ">
         <h1 className="font-bold text-4xl text-main-choc">
           Your Transaction History
         </h1>
@@ -105,6 +105,12 @@ function EmployeTransaction() {
           d="M0,256L60,234.7C120,213,240,171,360,154.7C480,139,600,149,720,128C840,107,960,53,1080,48C1200,43,1320,85,1380,106.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
       </svg>
+      {/* <div className="w-full   h-[150px] bg-white absolute bottom-0 z-[0] flex flex-col justify-center items-center  rounded-lg gap-2 shadow-sm">
+        <div className=" w-[80%] h-[40px] bg-slate-400  rounded-lg" >
+           
+        </div>
+        <div className=" w-[80%] h-[40px] bg-slate-500  rounded-lg">as3wwww</div>
+      </div> */}
     </div>
   );
 }

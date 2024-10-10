@@ -21,15 +21,15 @@ function Sidebar(sidebarLink) {
     : sidebarLink.sidebarLink.sidebarLink;
 
   return (
-    <div className="bg-gradient-to-tl from-main-choc to-main-green w-70 min-w-60 p-3 flex flex-col text-white">
-      <div className="flex flex-col items-center gap-0 py-5 pt-0 rounded-lg">
-        <TbMassage className="h-20 text-white" size={"sm"} />
+    <div className="side-bar bg-gradient-to-tl from-main-choc to-main-green w-70 min-w-60 p-3 flex flex-col text-white">
+      <div id="logo-massage"  className="flex flex-col items-center gap-0 py-5 pt-0 rounded-lg">
+        <TbMassage  className="logo-massage w-20 h-20 text-white" />
         <span className="text-white-180 text-5xl font-inter font-bold">
           Urut Aja!
         </span>
       </div>
       <Divider className="bg-white rounded-full w-10 h-1 m-auto" />
-      <div className="flex-1 py-8 flex flex-col gap-1">
+      <div className="flex-1 py-2 flex flex-col gap-1">
         {sidebarLinkChecked &&
           sidebarLinkChecked.map((item) => (
             <SidebarLink key={item.key} item={item} />
@@ -67,7 +67,7 @@ function SidebarLink({ item }) {
             : "text-white font-inter font-bold group-hover:text-main-green"
         )}
       >
-        {item.label}
+        {item.label} 
       </span>
     </Link>
   );

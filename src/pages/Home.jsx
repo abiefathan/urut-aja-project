@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+
+import React, { useEffect, useState, useRef } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -96,11 +101,11 @@ function Home() {
   }, []);
 
   return (
-    <div className="h-screen min-w-screen bg-white flex flex-col font-inter">
+    <div className="home  min-w-screen bg-white flex flex-col font-inter">
       <Navbar
         isBordered
         height={100}
-        className="bg-gradient-to-l from-main-choc to-main-green w-full"
+        className="bg-gradient-to-l from-main-choc to-main-green w-full "
       >
         <NavbarBrand className="gap-3">
           <TbMassage className=" text-white pl-2" size="80" />
@@ -114,25 +119,26 @@ function Home() {
             Welcome Visitors
           </NavbarItem>
         </NavbarContent>
+
         <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
+          <NavbarItem className=" ">
             <Login />
           </NavbarItem>
         </NavbarContent>
       </Navbar>
 
-      <div className="flex justify-center py-24 px-10 flex-grow">
-        <Card className="grid grid-cols-2 w-fit shadow-none">
+      <div className="flex flex-col justify-center py-24 px-10 flex-grow  ">
+        <Card className="card grid grid-cols-2 w-fit shadow-large">
           <CardHeader className="flex flex-col">
             <Image
               width={1000}
               height={550}
-              className="object-cover"
+              className="image object-cover"
               alt="NextUI hero Image"
               src="https://www.batiqa.com/upload/news/xl/masseur-does-back-massage-young-guy-beauty-salon-min_2076a.jpg"
             />
           </CardHeader>
-          <CardBody className="text-center font-bold text-3xl ">
+          <CardBody className=" text-center font-bold text-3xl ">
             <h1 className="">Find Your Best Massage Therapist</h1>
             <form onSubmit={form.handleSubmit(submitForm)}>
               <Controller
@@ -284,32 +290,88 @@ function Home() {
             </form>
           </CardBody>
         </Card>
-      </div>
+    <div className="flex justify-center w-full">
+  <Swiper
+    slidesPerView={4}
+    spaceBetween={10}
+    centeredSlides={true}
+    pagination={{
+      clickable: false,
+    }}
+    modules={[Pagination]}
+    className="mySwiper"
+    style={{
+      width:"100%",
+      
+      alignItems: "center",
+      justifyContent: "center",
 
+      
+    }}
+  >
+    <SwiperSlide className="gambar-slide" >
+      <img
+        isBlurred
+        src="https://th.bing.com/th/id/OIP.BQCg1rjrBBPmqjme0AFA7wHaE7?rs=1&pid=ImgDetMain"
+        alt="NextUI Album Cover"
+        className="w-full h-full object-cover "
+        
+      />
+    </SwiperSlide>
+    <SwiperSlide>
+      <img
+        isBlurred
+        src="https://th.bing.com/th/id/OIP.mKnXcuVgcu3dXdxyvAiEKgHaE7?rs=1&pid=ImgDetMain"
+        alt="NextUI Album Cover"
+        className="w-full h-full object-cover"
+      />
+    </SwiperSlide>
+    <SwiperSlide>
+      <img
+        isBlurred
+        src="https://img.freepik.com/premium-photo/man-receiving-neck-massage_13339-123582.jpg"
+        alt="NextUI Album Cover"
+        className="w-full h-full object-cover"
+      />
+    </SwiperSlide>
+    <SwiperSlide>
+      <img
+        isBlurred
+        src="https://th.bing.com/th/id/OIP.3zw5BEcHAbJbiWqLLnF_1gHaE8?rs=1&pid=ImgDetMain"
+        alt="NextUI Album Cover"
+        className="w-[400px] h-full object-cover"
+      />
+    </SwiperSlide>
+    <SwiperSlide>
+      <img
+        isBlurred
+        src="https://www.tripsavvy.com/thmb/GzoED4JMKj7q9iZt3dPjlAP0b84=/950x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-109378787-5bbb89e14cedfd0026b32a6f.jpg"
+        alt="NextUI Album Cover"
+        className="w-full h-full object-cover"
+      />
+    </SwiperSlide>
+    
+  </Swiper>
+</div>
+
+
+      </div>
+      
       <div className="flex w-full bg-gradient-to-br from-main-choc to-main-green justify-center py-10">
         <div className="w-9/12  flex flex-col gap-8">
           <h1 className="text-center font-bold text-white text-6xl">
             How To Order
           </h1>
-          <div className="h-fit grid grid-cols-2">
+          <div >
             <div className="flex justify-center items-center">
-              <svg
-                width="300px"
-                height="300px"
-                viewBox="0 0 32 32"
-                fill="#ffffff"
-              >
+              <svg width="17rem" viewBox="0 0 32 32" fill="#ffffff">
                 <path d="M19,11H9V9h10V11z M23,19.414V27H5V5h18v3.586L28.414,14L23,19.414z M23.086,16.5L20.5,13.914 l-4.5,4.5V21h2.586L23.086,16.5z M23,11.414L21.914,12.5l2.586,2.586L25.586,14L23,11.414z M21,21.414L19.414,23H9v-2h5v-2H9v-2 h5.586l2-2H9v-2h9.586L21,10.586V7H7v18h14V21.414z"></path>
               </svg>
-              {/* <Image
-                width={500}
-                height={350}
-                alt="NextUI hero Image"
-                src="https://static.vecteezy.com/system/resources/previews/021/272/476/original/isometric-flat-3d-illustration-concept-of-man-filling-personal-data-form-free-vector.jpg"
-              /> */}
+             
             </div>
+          
             <div className="flex justify-center items-center">
-              <p className="text-xl mr-16 text-justify text-white">
+              <p className="text-xl  text-white">
                 <strong className="text-2xl">Fill Out the Form</strong>
                 <br />
                 In this step, simply complete the form displayed on your main
@@ -317,9 +379,9 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className="h-96 grid grid-cols-2">
-            <div className="flex justify-center items-center">
-              <p className="text-xl ml-16 text-justify text-white">
+          <div className="h-96 grid grid-cols-2 ">
+            <div className="flex justify-center items-center ">
+              <p className="text-xl   text-white ms-0">
                 <strong className="text-2xl">Choose Your Therapist</strong>
                 <br />
                 In the second step, select a therapist from the options
@@ -328,23 +390,14 @@ function Home() {
               </p>
             </div>
             <div className="flex justify-center items-center">
-              <svg
-                fill="#ffffff"
-                width="300px"
-                height="300px"
-                viewBox="0 0 24 24"
-              >
+              <svg fill="#ffffff" width="13rem" viewBox="0 0 24 24">
                 <path d="M20 20h-16c-1.654 0-3-1.346-3-3v-10c0-1.654 1.346-3 3-3h16c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3zm-16-14c-.551 0-1 .449-1 1v10c0 .551.449 1 1 1h16c.551 0 1-.449 1-1v-10c0-.551-.449-1-1-1h-16zM10 15h-4c-.553 0-1-.448-1-1s.447-1 1-1h4c.553 0 1 .448 1 1s-.447 1-1 1zM10 11h-4c-.553 0-1-.448-1-1s.447-1 1-1h4c.553 0 1 .448 1 1s-.447 1-1 1z"></path>{" "}
                 <circle cx="16" cy="10.5" r="2"></circle>
                 <path d="M16 13.356c-1.562 0-2.5.715-2.5 1.429 0 .357.938.715 2.5.715 1.466 0 2.5-.357 2.5-.715 0-.714-.98-1.429-2.5-1.429z"></path>
               </svg>
-              {/* <Image
-                width={500}
-                height={350}
-                alt="NextUI hero Image"
-                src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1583.jpg?t=st=1727356136~exp=1727359736~hmac=786580950cf56c49524c631b9fde95932c04c8aea4aeb03aa960738497bcac47&w=826"
-              /> */}
+            
             </div>
+            
           </div>
           <div className="h-96 grid grid-cols-2">
             <div className="flex justify-center items-center">
@@ -357,15 +410,10 @@ function Home() {
                 <path d="M0 0h48v48H0z" fill="none"></path>
                 <path d="M40.228,21.494L30,11.267V8c0-2.2-1.8-4-4-4H10C7.8,4,6,5.8,6,8v23.955c0,2.2,1.8,4,4,4h3.992l0.121,0.799 c0.621,4.105,4.012,7.201,7.888,7.201h20v-17C42,23.483,40.656,21.907,40.228,21.494z M26,9.185c-0.198-0.019-0.398-0.03-0.6-0.03 c-1.605,0-3.112,0.623-4.24,1.751c-1.132,1.125-1.758,2.629-1.76,4.234c-0.003,1.611,0.621,3.123,1.756,4.259L26,24.243v7.712h-7V8 h7V9.185z M10,8h3v23.955h-3V8z M38,39.955H22c-1.915,0-3.605-1.633-3.933-3.799l-0.03-0.201H26c2.2,0,4-1.8,4-4v-3.712l2.12,2.12 l2.829-2.828l-4.663-4.663L25,17.587l-1.016-1.016c-0.378-0.378-0.585-0.884-0.584-1.424c0.001-0.534,0.207-1.033,0.584-1.408 c0.423-0.423,1.024-0.6,1.604-0.548c0.455,0.04,0.897,0.217,1.228,0.548L31,17.923l6.416,6.416l-0.072-0.022l0.109,0.072 C37.584,24.586,38,25.337,38,26.955V39.955z"></path>{" "}
               </svg>
-              {/* <Image
-                width={500}
-                height={350}
-                alt="NextUI hero Image"
-                src="https://static.vecteezy.com/system/resources/previews/000/684/243/non_2x/online-payment.jpg"
-              /> */}
+             <br />
             </div>
             <div className="flex justify-center items-center">
-              <p className=" text-xl mr-7 text-justify text-white">
+              <p className=" text-xl  text-white">
                 <strong className="text-2xl">Make the Payment</strong>
                 <br />
                 After making the payment, the therapist will come to your
@@ -391,10 +439,10 @@ function Home() {
         </div>
       </div>
 
-      <footer className="mt-auto justify-center min-w-full flex min-h-56 bg-gradient-to-r from-main-choc to-main-green">
-        <div className="w-9/12 grid grid-cols-2 text-white ">
-          <div className="h-full flex flex-col items-start pl-36 justify-center gap-2 ">
-            <div className="flex gap-4">
+      <footer className="mt-auto j min-w-full flex  bg-gradient-to-r from-main-choc to-main-green">
+        <div className="footer grid grid-cols-2 text-white ">
+          <div className="flex flex-col   justify-center items-center gap-2">
+            <div className="flex gap-4 ms">
               <FaLocationDot size="25" />
               <p className="font-bold text-md mb-2 text-white">
                 Jl. Raya Pahlawan No. 20, Kota Jakarta
@@ -412,9 +460,7 @@ function Home() {
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="font-bold text-2xl ">About Us</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis veritatis et possimus id tempore nisi aliquid
-              blanditiis, deleniti fuga in?
+            Our app makes it easy for you to order professional on call massage services directly to your home. Choose a therapist, massage type, and set a schedule to suit your needs quickly and easily.
             </p>
             <div className="flex gap-6">
               <FaFacebookSquare size="35" />
@@ -424,6 +470,9 @@ function Home() {
           </div>
         </div>
       </footer>
+      <div className="flex justify-center text-center bg-black text-white">
+      © 2024 Urut Aja !Jakarta. All Right Reserved
+      </div>
     </div>
   );
 }

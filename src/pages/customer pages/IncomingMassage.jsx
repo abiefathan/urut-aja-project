@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { axiosInstance } from "../../lib/axsios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { FaMotorcycle } from "react-icons/fa";
 
 const IncomingMassage = () => {
   const email = sessionStorage.getItem("emailEmploye");
@@ -73,7 +74,7 @@ const IncomingMassage = () => {
             key={data.id}
             className="flex flex-col justify-center text-center items-center h-screen"
           >
-            <svg
+            {/* <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +153,10 @@ const IncomingMassage = () => {
                     stroke-linecap="round"
                   ></path>{" "}
                 </g>
-              </svg>
+              </svg> */}
+              <div className="w-full flex justify-center">
+              <FaMotorcycle className="w-60 h-60 text-neutral-200 animate-indeterminate-bar"/>
+              </div>
             <h1 className="text-4xl text-white font-inter font-semibold">
               Please wait for our Massage Therapist to arrive soon.
             </h1>

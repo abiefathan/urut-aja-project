@@ -1,0 +1,125 @@
+@media(max-width : 500px) {
+    .home{
+       
+        
+    }
+    .home .card{
+       display: flex;
+       width: 80%;
+       margin: 35px;
+      
+    }
+    .home .card .image {
+      
+        display: none;
+    }
+    .home .card .from-body{
+        width: 50rem;
+        margin-right: 30px;
+        text-align: center;
+    }
+    .home h1 {
+        font-size: 1.4rem;
+    }
+    .text-content h{
+        background: #000;
+        
+    }
+    .mySwiper {
+        height: 6rem;
+    }
+    .footer{
+
+    }
+    
+    .side-bar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: auto; /* Mengatur tinggi sesuai konten sidebar */
+        z-index: 10; /* Memastikan sidebar tetap di atas konten */
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+      }
+      #logo-massage {
+        display: none;
+      }
+      
+    #employe{
+        background-color: #f1f0f0;
+    }
+    #card-employe {
+        width: 300px;
+      height: 300px;
+    
+    }
+    #avatar-employe{
+        margin-top: 100px ;
+        width: 150px;
+        height: 150px;
+    }
+    #border-circle{
+        width: 4rem;
+        height:4rem;
+    }
+    #circle{
+        height: 3rem;
+        width: 3rem;
+        transform:translateX(0)
+
+        
+    }
+    #toast-notification{
+        margin-top: 0%;
+       height: 50px;
+    }
+    .incoming {
+        display: none;
+    }
+    .few {
+        display: none;
+    }
+    .transaction-employe{
+        text-align: center;
+    }
+    .avaliable-employe{
+        display:flex ;
+    }
+    .btn-bidding{
+        width:170px;
+        background: #000;
+    }
+    #bidding-back{
+       
+        background: #000;
+    }
+    #bidding-back .icon-back {
+        width: 30px;
+    }
+    .card-finish{
+        
+    }
+  
+}
+@media(min-width :500px) {
+    .avaliable-employe{
+        display:none ;
+    }
+}
+
+@media (max-width :1300px){
+    .peta {
+       height: 10rem;     
+    }
+    .container-fame{
+        
+         justify-content:center ;
+    }
+    .card-finish{
+        height: 50%;
+
+        width: 80%;
+        margin-right:0px ;
+    }
+    
+}

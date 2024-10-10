@@ -100,7 +100,7 @@ function BiddingFeedback() {
   }, []);
 
   return (
-    <div className="max-h-screen bg-gradient-to-br from-main-choc to-main-green flex flex-col justify-center items-center">
+    <div className="max-h-screen bg-gradient-to-br from-main-choc to-main-green flex flex-col justify-center items-center text-center">
       <h1 className="font-inter mt-5 font-semibold text-[1.5rem] text-white">
         Bidding Page
       </h1>
@@ -119,9 +119,10 @@ function BiddingFeedback() {
       </Button>
       <Button
         onClick={() => getBack()}
-        className="absolute left-2 top-2 flex justify-center items-center w-20 h-20 rounded-xl bg-white transition duration-1000 hover:scale-110 hover:duration-900 hover:transition hover:animate-pulse"
-      >
-        <IoMdArrowRoundBack className="text-main-green w-20 h-20 " />
+        id="bidding-back"
+        className="absolute left-2 top-2 flex justify-center items-center w-[3rem] h-20 rounded-xl bg-white transition duration-1000 hover:scale-110 hover:duration-900 hover:transition hover:animate-pulse"
+      >  
+        <IoMdArrowRoundBack className="icon-back text-main-green w-10 h-20 " />
       </Button>
       <div className="w-full h-[100vh] flex flex-wrap justify-center gap-8 mt-48">
         {dataEmploye?.length > 0 ? (

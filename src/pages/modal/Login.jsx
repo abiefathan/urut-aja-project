@@ -19,6 +19,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { TbMassage } from "react-icons/tb";
+import Swal from "sweetalert2";
 
 function Login() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -73,15 +74,21 @@ function Login() {
         navigate("/employe-dashboard");
       }
     } catch (error) {
+      console.log(error.response.data.status)
       // Tangani kesalahan jika ada
-      if (error.response) {
-        console.log("Error response:", error.response.data);
+      if (error.response.data.status ==401) {
+        await Swal.fire({
+          title: "gagal!",
+          text: "Email or Password Failed ",
+          icon: "error",
+        });
       } else if (error.request) {
         console.log("Request error:", error.request);
       } else {
-        console.log("General error:", error.message);
+        alert("mohon periksa jaringan internet anda")
       }
     }
+    
   };
 
   return (

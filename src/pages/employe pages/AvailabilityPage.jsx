@@ -13,7 +13,7 @@ import axios from "axios";
 import { a } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../lib/axsios";
 import { useSelector } from "react-redux";
 import { FaRegAddressCard } from "react-icons/fa";
@@ -25,6 +25,9 @@ const AvailabilityPage = () => {
   const email = sessionStorage.getItem("email");
   const [FilteredOrders, setFilteredOrders] = useState(0);
   const [user, setUser] = useState([]);
+  const navigate =useNavigate()
+
+  
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -78,7 +81,10 @@ const AvailabilityPage = () => {
   // }, [FilteredOrders]);
 
   return (
-    <div className="flex justify-center pl-64 pb-16 w-full h-screen items-center bg-gray-200 gap-10">
+    <div
+      id="employe"
+      className="employe flex flex-col justify-center w-full h-screen items-center bg-white "
+    >
       {isChecked ? (
         <Link
           to="employe-offer-page"
@@ -105,13 +111,13 @@ const AvailabilityPage = () => {
               </div>
               <div className="flex items-center">
                 <div className="ms-3 text-sm font-normal">
-                  <div className="text-lg font-prompt text-white group-hover:text-yellow-400">
+                  <div className="incoming text-lg font-prompt text-white group-hover:text-yellow-400">
                     Order Incoming...
                   </div>
                   <div className="bg-white font-prompt w-[40px] h-[40px] rounded flex justify-center items-center text-[#926d57] group-hover:text-main-green absolute top-2 right-2">
                     <h4>{FilteredOrders}</h4>
                   </div>
-                  <span className="text-xs font-prompt text-white">
+                  <span className="few text-xs font-prompt text-white">
                     a few seconds ago
                   </span>
                 </div>
@@ -124,12 +130,13 @@ const AvailabilityPage = () => {
       )}
 
       <Card
-        className={` z-[1] w-[50%] h-[60%] overflow-visible flex items-center mr-24  ${
+        id="card-employe"
+        className={`  z-[1] w-[50%] h-[60%] overflow-visible flex items-center  shadow-lg ${
           isChecked ? "bg-main-green" : "bg-[#926d57]"
         } border-none hover:transition hover:duration-900 hover:scale-110  `}
       >
         <CardHeader
-          className={`flex h-52 transition duration-1000 ${
+          className={`flex  transition duration-1000 ${
             isChecked ? "bg-main-green" : "bg-[#926d57]"
           } z-0`}
         >
@@ -137,6 +144,7 @@ const AvailabilityPage = () => {
         </CardHeader>
 
         <Avatar
+          id="avatar-employe"
           className={`w-64 h-64 border-solid border-8 border-white ${
             isChecked ? "animate-bounce" : "animate-none"
           } -top-32 absolute z-auto`}
@@ -173,17 +181,19 @@ const AvailabilityPage = () => {
               Not Available
             </span>
             <span
-              className={`slider mx-4 flex h-20 w-[172px] items-center rounded-full p-1 duration-200 border-5 border-[#926d57]  transition duration-1000  ${
+              id="border-circle"
+              className={`slider mx-4 flex h-20 w-[12rem] items-center rounded-full p-1 duration-200 border-5     ${
                 isChecked
                   ? "bg-white  border-main-green"
                   : "bg-white border-[#926d57] "
               }`}
             >
               <span
+                id="circle"
                 className={`dot h-16 w-16 rounded-full transition duration-1000 ${
                   isChecked ? "bg-main-green animate-pulse" : "bg-[#926d57]"
                 } duration-200 ${
-                  isChecked ? "translate-x-[90px] bg-[#926d57]" : ""
+                  isChecked ? "translate-x-[110px] bg-[#926d57]" : ""
                 }`}
               ></span>
             </span>
@@ -208,6 +218,12 @@ const AvailabilityPage = () => {
           d="M0,256L60,234.7C120,213,240,171,360,154.7C480,139,600,149,720,128C840,107,960,53,1080,48C1200,43,1320,85,1380,106.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
       </svg>
+      {/* <div className="avaliable-employe w-full   h-[160px] bg-white absolute bottom-0 z-[0] flex flex-col justify-center items-center  rounded-lg gap-2 shadow-sm" >
+        <div className=" w-[80%] h-[40px] bg-slate-400  rounded-lg" onClick={()=>navigate("/employe-dashboard")} >
+           
+        </div>
+        <div className=" w-[80%] h-[40px] bg-slate-500  rounded-lg">as3wwww</div>
+      </div> */}
     </div>
   );
 };

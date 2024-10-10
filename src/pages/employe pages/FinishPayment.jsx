@@ -49,7 +49,7 @@ const FinishPayment = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-white ">
+    <div className="w-screen h-screen flex flex-col items-center bg-white text-center ">
       <svg
         viewBox="0 0 32 32"
         enable-background="new 0 0 32 32"
@@ -113,17 +113,10 @@ const FinishPayment = () => {
         Please Go To The Customer's Location Immediately
       </h1>
 
-      <div className="w-10 h-10 z-[1]">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319"
-          display="block"
-          className="h-[30rem] w-[30rem] border-2 border-main-choc absolute bottom-5 right-5 "
-          disabled
-        />
-      </div>
+     
       {dataPayment &&
         dataPayment.map((data) => (
-          <Card className="max-w-[800px] w-[500px] h-[500px]">
+          <Card className="card-finish w-[60%] h-[40%] ">
             <CardHeader className="flex gap-3">
               <div className="flex flex-col">
                 <h1 className="text-md text-main-choc font-inter">
@@ -179,7 +172,7 @@ const FinishPayment = () => {
                 You can go back after customer click done service button
               </h1>
               <Button
-                className="font-inter font-semibold text-white bg-main-choc text-xl hover:bg-main-green-darker"
+                className="font-inter font-semibold text-white bg-main-choc text-xl hover:bg-main-green-darker h-72"
                 onClick={handleClick}
               >
                 Back To Dashboard
@@ -193,6 +186,14 @@ const FinishPayment = () => {
             </CardFooter>
           </Card>
         ))}
+         <div className="container-fame w-[100%] h-100 flex justify-end ">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319"
+       
+          className="peta h-[20rem] w-[20rem] border-2 border-main-choc  "
+          disabled
+        />
+      </div>
     </div>
   );
 };

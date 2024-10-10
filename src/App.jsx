@@ -166,6 +166,7 @@ function App() {
           }
         >
           <Route
+          path="account-page-employe"
             index
             element={
               <ProtectedRoute

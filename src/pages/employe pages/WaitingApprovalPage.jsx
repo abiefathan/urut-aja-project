@@ -140,7 +140,7 @@ function WaitingApprovalPage() {
       <div className="h-screen w-screen flex flex-col justify-center items-center bg-gradient-to-br from-main-choc to-main-green gap-4">
         <div></div>
         <MdPersonPinCircle className="w-60 h-60 text-neutral-200 animate-bounce" />
-        <div className="text-white font-inter font-semibold text-5xl animate-pulse">
+        <div className="text-white text-center font-inter font-semibold text-5xl animate-pulse">
           Waiting Approval Page Loading...
         </div>
         <div>
